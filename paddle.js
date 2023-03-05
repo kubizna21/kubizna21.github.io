@@ -1,5 +1,4 @@
 const SPEED = 0.02
-/*computers maximum speed for the ball */
 
 export default class Paddle {
   constructor(paddleElem) {
@@ -27,7 +26,5 @@ export default class Paddle {
 
   update(delta, ballHeight) {
     this.position += SPEED * delta * (ballHeight - this.position)
-    /*if the ball is above current position it would go upward and if its below current position it would move downward
-    when ball moves too fast the computer will no longer be able to keep up with it */
   }
 }
