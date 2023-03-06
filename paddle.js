@@ -1,30 +1,42 @@
-const SPEED = 0.02
+let userPaddle = document.querySelector('#user-paddle')
+let compPaddle = document.querySelector('#comp-paddle')
 
-export default class Paddle {
-  constructor(paddleElem) {
-    this.paddleElem = paddleElem
-    this.reset()
-  }
+userPaddle.style.marginLeft = '30px'
+userPaddle.style.marginTop = '0px'
+compPaddle.style.marginLeft = '1048px'
+compPaddle.style.marginTop = '0px'
 
-  get position() {
-    return parseFloat(
-      getComputedStyle(this.paddleElem).getPropertyValue("--position")
-    )
-  }
+let W_Pressed = false
+let S_Pressed = false
 
-  set position(value) {
-    this.paddleElem.style.setProperty("--position", value)
+document.addEventListener('keydown', (e)=>{
+  if(e.keyCode=='87'){
+    W_Pressed = true
   }
+})
 
-  rect() {
-    return this.paddleElem.getBoundingClientRect()
+document.addEventListener('keyup', (e)=>{
+  if(e.keyCode=='87'){
+    W_Pressed = true
   }
+})
 
-  reset() {
-    this.position = 50
-  }
+gameLoop()
 
-  update(delta, ballHeight) {
-    this.position += SPEED * delta * (ballHeight - this.position)
-  }
+function gameLoop(){
+  setTimeout(() => {
+    setInterval(() => {
+      timeout
+    }, 5);
+    
+  }, 500);
 }
+
+function marginTop(elem){
+  return Number(elem.style.marginTop.split('p')[0])
+}
+
+function marginLeft(elem){
+  return Number(elem.style.maraginLeft.split('p'[0]))
+}
+
